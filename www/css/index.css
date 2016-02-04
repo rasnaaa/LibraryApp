@@ -1,15 +1,18 @@
-* {
-    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+/** {*/
+/*    -webkit-tap-highlight-color: rgba(0,0,0,0);  make transparent link selection, adjust last value opacity 0 to 1.0 */
+}
+html{
 }
 
 body {
-    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
-    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
-    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
-    background-color:#FFFFFF;
-    background-image:linear-gradient(top, #CCC 0%, #FFFFFF 51%);
-    background-image:-webkit-linear-gradient(top, #CCC 0%, #FFFFFF 51%);
-    background-image:-ms-linear-gradient(top, #CCC 0%, #FFFFFF 51%);
+/*    -webkit-touch-callout: none;                 prevent callout to copy image, etc when tap to hold */
+/*    -webkit-text-size-adjust: none;              prevent webkit from resizing text to fit */
+/*    -webkit-user-select: none;  */
+/*	background-image: url(../img/bbbg.jpg)}; prevent copy paste, to allow, change 'none' to 'text' */
+/*    background-color:#FFFFFF;*
+/*    background-image:linear-gradient(top, #CCC 0%, #FFFFFF 51%);*/
+/*    background-image:-webkit-linear-gradient(top, #CCC 0%, #FFFFFF 51%);*/
+/*    background-image:-ms-linear-gradient(top, #CCC 0%, #FFFFFF 51%);*/
     background-image:-webkit-gradient(
         linear,
         left top,
@@ -25,7 +28,11 @@ body {
     width:100%;
 }
 
-
+#home-page{
+	background-image: url(../img/bbbg.jpg);
+	background-size: cover;
+	
+}
 h1 {
     font-size:24px;
     font-weight:normal;
@@ -33,6 +40,14 @@ h1 {
     overflow:visible;
     padding:0px;
     text-align:center;
+}
+
+h2{ font-size:24px;
+    font-weight:900;
+    margin-left:30%;
+    overflow:visible;
+    padding:0px;
+	font-style: oblique;
 }
 
 /* header */
@@ -75,6 +90,8 @@ margin: .8em 30% .8em;
 
 /* map */
 #second-page{
+	background-image: url(../img/bbbg.jpg);
+	background-size: cover;
    
 }
 .big-text{
@@ -105,3 +122,4 @@ margin: .8em 30% .8em;
 .ui-icon-ms-search {
     background: url("../img/search-icon.png") 50% 50% no-repeat;
 }
+
