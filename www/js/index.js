@@ -33,7 +33,22 @@ var app = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
-        app.receivedEvent('deviceready');
+        $(function(){
+            $("#cityone").on("click", function(e){
+                e.preventDefault();
+                //alert(this.text);
+                var city = this.text.toLowerCase();
+                $.ajax({
+                    type: 'GET',
+                    dataType: 'jsonp',
+                    url: 'https://www.googleapis.com/books/v1/volumes?q=isbn:' + isbn,
+                success: function(data){
+                    console.log(data);
+                    $("#containerone").html("");
+                }
+                });
+            });
+        });
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
