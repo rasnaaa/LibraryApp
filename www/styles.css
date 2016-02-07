@@ -302,20 +302,4 @@ a:hover{
 
 .clear{
 	clear:both;
-<<<<<<< HEAD
-}
-
-#bookContent {
-	text-align: center;
-	margin-top: 20%;
-	background-color: rgba(255, 255, 255, 0.5);
-}
-
-.bookthumb src {
-	width: 100px;
-	height: 100px;
-}
-
-#bookTitle {
-	font-size: 20pt;
 }
