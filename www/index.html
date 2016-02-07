@@ -26,9 +26,9 @@
               </center>
               <div id="custom-search-input">
                 <div class="input-group col-md-12">
-                  <input type="text" class="search-query form-control" placeholder="Search" />
+                  <input type="text" class="search-query form-control" value="" id="isbnnum"/>
                   <span class="input-group-btn">
-                    <a data-theme="d" href="#second-page" data-role="button">Search</a>
+                  <a data-theme="d" href="#second-page" data-role="button" id="searchbutton">Search</a>
                   </span>
                 </div>
               </div>
@@ -54,64 +54,77 @@
         <div data-role="content" >
           <div id="bookContent" class="bookContent">
             <div id="bookthumb" class="bookthumb">
-              <img src="#" style="width:100px; height:100px;"/>
-            </div>
-            <div id="bookTitle" class="bookTitle">
-              Title
-            </div>
-            <div id="bookAuthors" class="bookAuthors">
-              MaMA
-            </div>
+              <img src="#" style="width:128px; height:156px;" id="myImage"/>
+            </div><br>
+            <center><legend>Title</legend></center>
+            <div id="title" class="bookTitle">
+
+            </div><br>
+            <center><legend>Author</legend></center>
+            <div id="author" class="bookAuthors">
+
+            </div><br>
             <div id="descriptionContainer" class="descriptionContainer">
-              <div id="bookDescription">
-                ....
+              <center><legend>Description</legend></center>
+              <div id="description">
+
               </div>
-            </div>
+            </div><br>
             <div id="bookdetails" class="bookdetails">
-              <div class="row" id="publishDate">
-                dd/mm/yy
-              </div>
-              <div class="row" id="isbnBook">
-                111111111
+              <center><legend>Publish Date</legend></center>
+              <div class="row" id="publishdate">
+
+              </div><br>
+              <center><legend>Publisher</legend></center>
+              <div class="row" id="publisher">
+
               </div>
             </div>
           </div><!--end of bookContent-->
-          <form  id="search-form" action="">
-            <button type="submit" data-theme="f" data-mini="false" class="ui-btn-hidden" aria-disabled="false">Done</button>
-          </form>
+          <a data-theme="d" href="#home-page" data-role="button">Done</a>
         </div> <!--end of content div-->
         <div id="footer" data-role="footer" data-id="footer1" data-position="fixed" data-tap-toggle="false">
-          <div id="navbar" data-role="navbar">
-            <ul>
-              <li><a id="map-button" href="#second-page" data-icon="flat-location" data-theme="b">Map</a></li>
-              <li><a id="list-button" href="#list-page" data-icon="flat-menu">List</a></li>
-              <li><a id="search-button" href="#search-page" data-icon="ms-search">Search</a></li>
-            </ul>
-          </div>
         </div>
       </div>
       <!--end of the second page-->
-
-      <!--About us page-->
-      <div  id="about-page" data-role="page">
-        <div data-role="header" data-id="header1" data-position="fixed" class="ui-header">
-          <a href="#" data-rel="back" data-role="button" data-icon="arrow-l" data-inline="true" >Back</a>
-          <h1>About App</h1>
-        </div>
-        <div data-role="content"  class="big-text">
-          <h2>Privacy Policy</h2>
-          <p>...</p>
-        </div>
-      </div>
-      <!--end of the about us page-->
     </div>
     <!--end of 'app' div-->
     <script type="text/javascript" src="libs/fastclick.min.js"></script>
     <script type="text/javascript" src="phonegap.js"></script>
     <script type="text/javascript" src="libs/jquery-2.0.3.min.js"></script>
     <script type="text/javascript" src="libs/jQueryMobile/jquery.mobile-1.3.2.min.js"></script>
-    <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script> -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
     <script src="script.js"></script>
+        <script type="text/javascript">
+            $(function () {
+                var button = document.getElementById("searchbutton");
+                var image = document.getElementById('myImage');
+                button.addEventListener("click", searchFunction);
+                function searchFunction() {
+                    var isbn = document.getElementById('isbnnum').value;
+                    $.ajax({
+                        type: 'GET',
+                        dataType: 'jsonp',
+                        url: 'https://www.googleapis.com/books/v1/volumes?q=isbn' + isbn,
+                    success: function(data){
+                        console.log(data);
+                        var titles = data.items[0].volumeInfo.title;
+                        var description = data.items[0].volumeInfo.description;
+                        var author = data.items[0].volumeInfo.authors[0];
+                        var thumbnail = data.items[0].volumeInfo.imageLinks.thumbnail;
+                        var publisher = data.items[0].volumeInfo.publisher;
+                        var publishdate = data.items[0].volumeInfo.publishedDate;
+                    $('#title').html(titles);
+                    $('#description').html(description);
+                    $('#author').html(author);
+                    $('#publisher').html(publisher);
+                    $('#publishdate').html(publishdate);
+                    image.src = thumbnail;
+                    }
+                    });
+                }
+            });
+        </script>
     <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript">
         app.initialize();
