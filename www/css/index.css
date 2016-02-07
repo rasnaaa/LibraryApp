@@ -31,7 +31,7 @@ body {
 #home-page{
 	background-image: url(../img/bbbg.jpg);
 	background-size: cover;
-	
+
 }
 h1 {
     font-size:24px;
@@ -92,7 +92,7 @@ margin: .8em 30% .8em;
 #second-page{
 	background-image: url(../img/bbbg.jpg);
 	background-size: cover;
-   
+
 }
 .big-text{
     font-size: 1.3em;
@@ -123,3 +123,17 @@ margin: .8em 30% .8em;
     background: url("../img/search-icon.png") 50% 50% no-repeat;
 }
 
+#bookContent {
+	text-align: center;
+	margin-top: 20%;
+	background-color: rgba(255, 255, 255, 0.5);
+}
+
+.bookthumb src {
+	width: 100px;
+	height: 100px;
+}
+
+#bookTitle {
+	font-size: 20pt;
+}
