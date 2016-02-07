@@ -58,11 +58,11 @@ fieldset{
 	background:url("img/searchBox.png") no-repeat;
 
 =======
-	
+
 	border:none;
 	color:#888888;
 	background:url("img/searchBox.png") no-repeat;
-	
+
 >>>>>>> 7deb473117c71cdafd27b828499c97e06c4341c4
 	float:left;
 	font-family:Arial,Helvetica,sans-serif;
@@ -117,7 +117,7 @@ span.arrow{
 <<<<<<< HEAD
 
 =======
-	
+
 >>>>>>> 7deb473117c71cdafd27b828499c97e06c4341c4
 	width:11px;
 	height:6px;
@@ -186,9 +186,9 @@ input[type=radio]{
 	/* Adding a dark bottom border with box shadow */
 
 =======
-	
+
 	/* Adding a dark bottom border with box shadow */
-	
+
 >>>>>>> 7deb473117c71cdafd27b828499c97e06c4341c4
 	-moz-box-shadow:0 1px 0 #798e9c;
 	-webkit-box-shadow:0 1px 0 #798e9c;
@@ -209,7 +209,7 @@ p.notFound{
 <<<<<<< HEAD
 .webResult h2{
 =======
-.webResult h2{ 
+.webResult h2{
 >>>>>>> 7deb473117c71cdafd27b828499c97e06c4341c4
 	background-color:#5D6F7B;
 	font-size:18px;
@@ -218,7 +218,7 @@ p.notFound{
 <<<<<<< HEAD
 
 =======
-	
+
 >>>>>>> 7deb473117c71cdafd27b828499c97e06c4341c4
 	/* Applying CSS3 rounded corners */
 	-moz-border-radius:18px;
@@ -319,6 +319,3 @@ a:hover{
 #bookTitle {
 	font-size: 20pt;
 }
-=======
-}
->>>>>>> 7deb473117c71cdafd27b828499c97e06c4341c4
