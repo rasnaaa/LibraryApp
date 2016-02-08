@@ -136,3 +136,8 @@ margin: .8em 30% .8em;
 #bookTitle {
 	font-size: 20pt;
 }
+
+#fbbtn {
+  background-color: #3b5998;
+  border-color: #3b5998;
+}
